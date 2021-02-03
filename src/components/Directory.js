@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import API from "../utils/API.js";
+import API  from "../utils/API.js";
+import "./Directory.css";
 import SearchResults from "./SearchResults.js";
 
 class Directory extends Component {
@@ -27,14 +28,15 @@ class Directory extends Component {
             });
     }
 
-    handleFilter = (event) => {
-        console.log(event);
-        this.setState({filter: event.target.value});
-        if(this.state.filter.length > 3){
+    handleFilter = (event) => {     
+        const filterValue = event.target.value;
+        this.setState({filter: filterValue});
+        console.log(filterValue.length);
+        if(filterValue.length > 0){
             this.setState({displayResults: this.state.allResults.filter((employee) => {
-                // Convert to object to JSON then do a full check on all fields
-                const empJSON = JSON.stringify(employee);
-                return (empJSON.includes(this.state.filter) > 0);
+                // concatenate relevant fields then do a full check on all fields
+                const empFields = `${employee.name.first} ${employee.name.last} ${employee.gender} ${employee.dob.age} ${employee.email} ${employee.location.street.number} ${employee.location.street.name} ${employee.location.city} ${employee.location.state} ${employee.location.postcode}`;
+                return (empFields.includes(this.state.filter) > 0);
             })});
         }else{
             this.setState({displayResults: this.state.allResults});
@@ -112,41 +114,46 @@ class Directory extends Component {
                     return 0;
                 }));
                 break;
-            case "postcode":
+            case "postalCode":
                 this.setState(this.state.displayResults.sort((a,b)=>{ 
                     if(a.location.postcode > b.location.postcode) return this.state.sort.asc;
                     if(a.location.postcode < b.location.postcode) return -1 * this.state.sort.asc;
                     return 0;
                 }));
                 break;
+            default:
+                console.log(`Invalid sort passed in: ${event.target.id}`);
+                break;
         }
     }
 
     render() {
-        return (            
-            <table className="Directory table-striped border mx-auto">                
-                <thead className="border-bottom">
-                    <tr>
-                        <td colSpan="2"></td>
-                        <td colSpan="5">
-                            <div className="mx-auto">Filter Results:<input type="text" className="form-control" name="filter" id="filter" placeholder="filter" value={this.state.filter} onChange={this.handleFilter}/></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th></th> 
-                        <th onClick={this.handleSortChange} id="firstName">First Name</th>
-                        <th onClick={this.handleSortChange} id="lastName">Last Name</th>
-                        <th onClick={this.handleSortChange} id="gender">Gender</th>
-                        <th onClick={this.handleSortChange} id="age">Age</th>
-                        <th onClick={this.handleSortChange} id="email">Email</th>
-                        <th onClick={this.handleSortChange} id="address">Address</th>
-                        <th onClick={this.handleSortChange} id="city">City</th>
-                        <th onClick={this.handleSortChange} id="state">State</th>
-                        <th onClick={this.handleSortChange} id="postalCode">Postal Code</th>          
-                    </tr>
-                </thead>
-                <SearchResults results={this.state.displayResults} />                        
-            </table>
+        return ( 
+            <div className="Directory">
+                <table className="table-striped border mx-auto">                
+                    <thead className="border-bottom">
+                        <tr>
+                            <td colSpan="3" className="mr-0">Filter Employees:</td>
+                            <td colSpan="5" className="ml-0">
+                                <input type="text" className="form-control" name="filter" id="filter" placeholder="filter" value={this.state.filter} onChange={this.handleFilter}/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th></th> 
+                            <th className="Directory" onClick={this.handleSortChange} id="firstName">First Name</th>
+                            <th onClick={this.handleSortChange} id="lastName">Last Name</th>
+                            <th onClick={this.handleSortChange} id="gender">Gender</th>
+                            <th onClick={this.handleSortChange} id="age">Age</th>
+                            <th onClick={this.handleSortChange} id="email">Email</th>
+                            <th onClick={this.handleSortChange} id="address">Address</th>
+                            <th onClick={this.handleSortChange} id="city">City</th>
+                            <th onClick={this.handleSortChange} id="state">State</th>
+                            <th onClick={this.handleSortChange} id="postalCode">Postal Code</th>          
+                        </tr>
+                    </thead>
+                    <SearchResults results={this.state.displayResults} />                        
+                </table>
+            </div>           
         );
     }
 }

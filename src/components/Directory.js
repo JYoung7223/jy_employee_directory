@@ -17,7 +17,8 @@ class Directory extends Component {
     componentDidMount() {
         API.getUsers(this.state.limit)
             .then( (response)=> {
-                this.setState({ results: response.results});
+                console.log(`Response:${JSON.stringify(response)}`);
+                this.setState({ results: response.data.results});
             })
             .catch( (err) => {
                 console.log(`Error Occured Getting Users:${err}`);

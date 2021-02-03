@@ -4,10 +4,11 @@ import axios from "axios";
 
 export default {
   getUsers: function(numUsers) {
-    return axios.get(`https://cors-anywhere.herokuapp.com/http://randomuser.me/api/?results=${numUsers}`, {
-      headers:{
-        "Accept": "application/json"
-      }
-    });
+    return axios.get(`https://cors-anywhere.herokuapp.com/http://randomuser.me/api/?results=${numUsers}`);
   }
 };
+    // , {
+    //   headers:{
+    //     "Accept": "application/json"
+    //   }
+    // });

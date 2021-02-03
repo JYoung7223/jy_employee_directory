@@ -15,7 +15,6 @@ function SearchResults(props) {
     return (
         <tbody className="employees">            
             {props.results.map( (employee) => {
-                console.log(`Employee:${JSON.stringify(employee)}`);
                 return (
                     <tr key={employee.email} className="employee">            
                         <td><img alt="profile-pic" src={employee.picture.thumbnail} className="img-fluid" /></td>

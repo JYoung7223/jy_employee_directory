@@ -1,70 +1,48 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# JY Employee Directory
+[![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)](http://creativecommons.org/publicdomain/zero/1.0/)
+## Description
+This Project uses React to provide a simple mock employee directory.  User sort the employees by clicking the column header, they may also filter by typing in the filter input box.
+## Table of Contents
+* [`Project`](#)
+* [`Description`](#Description)
+* [`Table of Contents`](#Table-of-Contents)
+* [`1nstallation Steps`](#Installation-Steps)
+* [`Usage Information`](#Usage-Information)
+* [`Testing`](#Testing)
+* [`License`](#License)
+* [`Contributing`](#Contributing)
+* [`Questions`](#Questions)
+* [`Sample`](#Sample)
+## Installation Steps
+To install this project, do the following:
+> 1. To Install on "localhost", clone repository to local workspace.
+> 2. In a terminal, in project base directory, run "npm install" to install dependencies.
+> 3. Run "npm run start" to start the application.
+> NOTE: You may need to change the URL under API.js to use a proxy to prevent CORS error.
 
-## Available Scripts
+## Usage Information
+To use this project, do the following:
+> 1. Ensure Installation Steps have been complete.
+> 2. For localhost, open browser and browse to URL http://localhost:3000
+> 3. You may sort employees by clicking the headings, and you may filter by typing in the filter input box.
 
-In the project directory, you can run:
+## Testing
+To test this project, do the following:
+> 1. To test on localhost, Ensure Installation steps are complete
+> 2. Verify Working on localhost, by performing Usage Steps
+> 3. To test app in github pages follow directions under: https://create-react-app.dev/docs/deployment/#github-pages
 
-### `npm start`
+## License
+This project is provided under the None license. For more information on license details click here [![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)](http://creativecommons.org/publicdomain/zero/1.0/)
+## Contributing
+If you wish to contribute, do the following:
+> Email me directly or submit pull request to contribute.
+## Questions
+If you have any question about this repo, you may open an issue or contact me directly at jyoung7223@yahoo.com
+You can find more of my work at [My Github Repo](https://github.com/JYoung7223 "My GitHub Repo")
+## Sample
+Deployed project can be found at: https://jyoung7223.github.io/jy_employee_directory/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Below is a sample screenshot:
+![Project Sample](./assets/my_directory.png "Project Sample")

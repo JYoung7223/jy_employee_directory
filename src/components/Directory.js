@@ -10,7 +10,7 @@ class Directory extends Component {
             field: "",
             asc: 1
         },
-        limit: 10,
+        limit: 22,
         allResults: [],
         displayResults: [],
         error: ""

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API  from "../utils/API.js";
-import "./Directory.css";
 import SearchResults from "./SearchResults.js";
+import './directory.css';
 
 class Directory extends Component {
     state = {
@@ -44,6 +44,7 @@ class Directory extends Component {
     }
 
     handleSortChange = (event) => {
+        event.preventDefault();
         // Set field to sort on and asc desc sort order
         const sortField = event.target.id;
         if(this.state.sort.field === sortField){
@@ -140,7 +141,7 @@ class Directory extends Component {
                         </tr>
                         <tr>
                             <th></th> 
-                            <th className="Directory" onClick={this.handleSortChange} id="firstName">First Name</th>
+                            <th onClick={this.handleSortChange} id="firstName">First Name</th>
                             <th onClick={this.handleSortChange} id="lastName">Last Name</th>
                             <th onClick={this.handleSortChange} id="gender">Gender</th>
                             <th onClick={this.handleSortChange} id="age">Age</th>
@@ -148,7 +149,7 @@ class Directory extends Component {
                             <th onClick={this.handleSortChange} id="address">Address</th>
                             <th onClick={this.handleSortChange} id="city">City</th>
                             <th onClick={this.handleSortChange} id="state">State</th>
-                            <th onClick={this.handleSortChange} id="postalCode">Postal Code</th>          
+                            <th onClick={this.handleSortChange} id="postalCode">Postal Code</th>
                         </tr>
                     </thead>
                     <SearchResults results={this.state.displayResults} />                        
